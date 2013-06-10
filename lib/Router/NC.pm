@@ -44,7 +44,7 @@ sub match {
     return (500) unless $route;
     $route = $route->{ $env->{REQUEST_METHOD} };
     return (405) unless $route;
-    return (200, $route, $match);
+    return (200, $match, @$route);
 }
 
 1;
